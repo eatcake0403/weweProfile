@@ -36,7 +36,7 @@ export default {
   height: 100%;
   position: absolute;
   animation-name: backgroundImage;
-  animation-duration: 10s;
+  animation-duration: 17s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   transform: scale(2);
@@ -58,7 +58,7 @@ export default {
 }
 
 .main {
-  grid-area: main;
   z-index: 1;
+  grid-area: main;
 }
 </style>

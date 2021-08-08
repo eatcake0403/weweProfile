@@ -1,15 +1,27 @@
 <template>
   <div :class="$style.root">
-    <div :class="[$style.outside, { [$style.iconClick]: routerName === 'webDevelopment' }]">
+    <div
+      @click="routerFunction('webDevelopment')"
+      :class="[$style.outside,
+        { [$style.iconClick]: routerName === 'webDevelopment' }]
+    ">
       <img
         :src="web"
         :class="$style.icon"
       />
     </div>
-    <div :class="$style.outside">
+    <div
+      @click="routerFunction('uiuxDesign')"
+      :class="[$style.outside,
+        { [$style.iconClick]: routerName === 'uiuxDesign' }]
+    ">
       <img :src="devices" :class="$style.icon"/>
     </div>
-    <div :class="$style.outside">
+    <div
+      @click="routerFunction('aboutMe')"
+      :class="[$style.outside,
+        { [$style.iconClick]: routerName === 'aboutMe' }]
+    ">
       <img :src="account" :class="$style.icon"/>
     </div>
   </div>
@@ -27,6 +39,12 @@ export default {
   computed: {
     routerName () {
       return this.$route.name
+    }
+  },
+  methods: {
+    routerFunction (routerName) {
+      if (routerName === this.$route.name) return
+      this.$router.push({ name: routerName })
     }
   }
 }

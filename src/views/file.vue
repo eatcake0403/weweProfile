@@ -1,9 +1,14 @@
 <template>
   <div :class="$style.root">
     <div :class="$style.layout">
-      <div :class="$style.imgStyle" @click="$router.push({ name: 'file' })"/>
+      <div :class="$style.imgStyle"/>
       <div :class="[$style.imgStyle, $style.imgStyle2]"/>
       <div :class="$style.imgStyle"/>
+      <div :class="$style.imgStyle"/>
+      <div :class="$style.imgStyle"/>
+      <div :class="$style.imgStyle"/>
+      <div :class="$style.imgStyle"/>
+      <div :class="[$style.imgStyle, $style.imgStyle3]"/>
       <div :class="$style.imgStyle"/>
       <div :class="$style.imgStyle"/>
     </div>
@@ -12,17 +17,16 @@
 
 <style lang="scss" module>
 .root {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: auto;
 }
 
 .layout {
   display: grid;
-  grid-template-columns: repeat(4, 250px);
-  grid-template-rows: repeat(2, 250px);
+  justify-content: center;
+  padding: 50px 0;
+  box-sizing: border-box;
+  grid-auto-columns: 250px;
+  grid-auto-rows: 250px;
   grid-gap: 20px;
 }
 
@@ -35,6 +39,13 @@
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 4;
+  }
+
+  &.imgStyle3 {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 3;
+    grid-column-end: 5;
   }
 }
 </style>

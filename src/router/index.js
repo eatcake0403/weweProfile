@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '@/layout/layout.vue'
 import WebDevelopment from '@/views/webDevelopment.vue'
+import AboutMe from '@/views/aboutMe.vue'
+import File from '@/views/file.vue'
 
 Vue.use(VueRouter)
 
@@ -13,6 +15,18 @@ const routes = [{
     path: 'webDevelopment',
     name: 'webDevelopment',
     component: WebDevelopment
+  }, {
+    path: 'uiuxDesign',
+    name: 'uiuxDesign',
+    component: WebDevelopment
+  }, {
+    path: 'aboutMe',
+    name: 'aboutMe',
+    component: AboutMe
+  }, {
+    path: 'file',
+    name: 'file',
+    component: File
   }]
 }]
 
