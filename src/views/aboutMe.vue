@@ -65,8 +65,6 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 50px;
-  box-sizing: border-box;
   border-left: 1px solid #E5E5FF;
   border-right: 1px solid #E5E5FF;
 }
@@ -82,7 +80,7 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 27px 0;
+  padding: 10px 0;
   color: #fff;
 
   .name2 {
@@ -143,7 +141,7 @@ export default {
   padding: 25px 0;
   font-size: 25px;
   color: #E5E5FF;
-  margin-bottom: 50px;
+  margin-bottom: 28px;
   border-top: 1px solid #E5E5FF;
   border-bottom: 1px solid #E5E5FF;
 }
