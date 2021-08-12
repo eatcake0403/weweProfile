@@ -11,13 +11,6 @@
       />
     </div>
     <div
-      @click="routerFunction('uiuxDesign')"
-      :class="[$style.outside,
-        { [$style.iconClick]: routerName === 'uiuxDesign' }]
-    ">
-      <img :src="devices" :class="$style.icon"/>
-    </div>
-    <div
       @click="routerFunction('aboutMe')"
       :class="[$style.outside,
         { [$style.iconClick]: routerName === 'aboutMe' }]
