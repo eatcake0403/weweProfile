@@ -61,4 +61,7 @@ export default {
   z-index: 1;
   grid-area: main;
 }
+
+@media (max-width: 1024px) {
+}
 </style>

@@ -17,6 +17,7 @@
           <div
             @click="$router.push({ name: 'file', params: { name: item.routeName } })"
             :class="$style.btn"
+            v-if="item.btn"
           >
             More
           </div>
@@ -49,7 +50,8 @@ export default {
           '比對版本，記錄檔案，並提供查看檔案、下載紀錄、下載檔案、刪除檔案等功能。',
           '功能包含地區管理、會員管理、目錄管理、專案管理、追蹤淸單、待辦事項、表單製作、檔案上傳、檔案審核、版本紀錄，多國語係。'
         ],
-        routeName: 'kms'
+        routeName: 'kms',
+        btn: true
       }, {
         img: require('@/assets/image/qrcode/010.png'),
         title: '抽獎報到系統',
@@ -58,7 +60,8 @@ export default {
           '可將抽獎動畫另開新頁，抽獎時會同步播放。',
           '前台可使用員工編號登入，進行報到功能。'
         ],
-        routeName: 'qrcode'
+        routeName: 'qrcode',
+        btn: true
       }, {
         img: require('@/assets/image/roche/04.png'),
         title: '醫療病患管理系統',
@@ -67,14 +70,16 @@ export default {
           '若病人目前用藥次數為需醫生審核後才可用藥，則會簽署用藥同意，同時醫師也會收到簽署書，雙方必須簽署同意書後病人才可拿取這次用藥。',
           '列表資料匯出 CSV 。'
         ],
-        routeName: 'roche'
+        routeName: 'roche',
+        btn: true
       }, {
         img: require('@/assets/image/sheho/09.png'),
         title: '師虎來了形象官網',
         directions: [
           '製作形象官網。'
         ],
-        routeName: 'sheho'
+        routeName: 'sheho',
+        btn: true
       }, {
         img: require('@/assets/image/shop/017.png'),
         title: '電商系統',
@@ -83,7 +88,8 @@ export default {
           '串接綠界金流、物流功能。',
           '串接第三方登陸，採用 OAuth 流程。'
         ],
-        routeName: 'shop'
+        routeName: 'shop',
+        btn: true
       }, {
         img: require('@/assets/image/wh/04.png'),
         title: '物聯網系統',
@@ -91,12 +97,14 @@ export default {
           '將地圖上的節點使用圖示標示出來，並把需顯示的資料顯示至前端。',
           '並依節點顯示不同的資訊，並能預覽、下載使用 API 拉至前端的 PDF 檔案，並提供上鏈功能。'
         ],
-        routeName: 'wh'
+        routeName: 'wh',
+        btn: true
       }, {
         img: require('@/assets/image/shinjer/01.png'),
         title: '多人視訊系統',
         directions: ['使用 WebSocket 接收 IP 的字串，使用 WebRTC和串接視訊、音頻達到多人視訊的效果，但目前未優化，只是簡單的串接。'],
-        routeName: 'shinjer'
+        routeName: 'shinjer',
+        btn: false
       }]
     }
   }
@@ -211,6 +219,18 @@ export default {
     height: 100%;
     top: 0;
     left: 0;
+  }
+}
+
+@media (max-width: 1025px) {
+  .layout {
+    grid-auto-columns: 100%;
+  }
+}
+
+@media (max-width: 1025px) {
+  .layout {
+    grid-auto-columns: 100%;
   }
 }
 </style>

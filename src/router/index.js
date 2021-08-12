@@ -4,6 +4,7 @@ import Layout from '@/layout/layout.vue'
 import WebDevelopment from '@/views/webDevelopment.vue'
 import AboutMe from '@/views/aboutMe.vue'
 import File from '@/views/file.vue'
+import Pdfvue from '@/views/pdf.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,10 @@ const routes = [{
     name: 'file',
     component: File
   }]
+}, {
+  path: '/cv',
+  name: 'cv',
+  component: Pdfvue
 }]
 
 const router = new VueRouter({

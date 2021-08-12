@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.root">
     <div :class="$style.line">
-      <div :class="$style.imageCss">
+      <div :class="$style.imageCss" :style="{ backgroundImage: `url(${me})` }">
       </div>
       <div :class="$style.name">
         <p :class="$style.name2">邱心薇</p>
@@ -22,11 +22,11 @@
         <img :src="pdf" :class="$style.pdfcss"/>
       </p>
       <div :class="$style.cvout">
-        <div :class="$style.outside">
+        <a :class="$style.outside" :href="cv" download="邱心薇-cv">
           <img :src="download" :class="$style.icon2"/>
           下載
-        </div>
-        <div :class="$style.outside">
+        </a>
+        <div :class="$style.outside" @click="tofunction">
           <img :src="view" :class="$style.icon2"/>
           預覽
         </div>
@@ -43,7 +43,14 @@ export default {
       mail: require('@/assets/svg/mail.svg'),
       pdf: require('@/assets/svg/pdf.svg'),
       view: require('@/assets/svg/view.svg'),
-      download: require('@/assets/svg/download.svg')
+      download: require('@/assets/svg/download.svg'),
+      cv: require('@/assets/cv.pdf'),
+      me: require('@/assets/me.jpeg')
+    }
+  },
+  methods: {
+    tofunction () {
+      window.open(window.location.origin + '/cv')
     }
   }
 }
@@ -59,7 +66,7 @@ export default {
 }
 
 .line {
-  width: 50%;
+  width: 80%;
   height: 90%;
   display: flex;
   align-items: center;
@@ -74,6 +81,7 @@ export default {
   width: 180px;
   height: 180px;
   border-radius: 5px;
+  background-size: contain;
 }
 
 .name {
@@ -131,6 +139,7 @@ export default {
   color: #E5E5FF;
   font-size: 20px;
   border: 1px solid #E5E5FF;
+  text-decoration: none;
 }
 
 .cv {

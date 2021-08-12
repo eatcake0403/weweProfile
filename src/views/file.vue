@@ -19,6 +19,7 @@
 export default {
   data () {
     return {
+      componentName: null,
       title: {
         kms: '檔案資訊存取管理系統',
         wh: '物聯網系統',
@@ -148,7 +149,7 @@ export default {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-
+  cursor: pointer;
 }
 
 .outside {
