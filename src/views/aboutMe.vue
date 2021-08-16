@@ -21,15 +21,9 @@
         履歷
         <img :src="pdf" :class="$style.pdfcss"/>
       </p>
-      <div :class="$style.cvout">
-        <a :class="$style.outside" :href="cv" download="邱心薇-cv">
-          <img :src="download" :class="$style.icon2"/>
-          下載
-        </a>
-        <div :class="$style.outside" @click="tofunction">
-          <img :src="view" :class="$style.icon2"/>
-          預覽
-        </div>
+      <div :class="$style.outside" @click="tofunction">
+        <img :src="view" :class="$style.icon2"/>
+        預覽
       </div>
     </div>
   </div>
@@ -50,7 +44,7 @@ export default {
   },
   methods: {
     tofunction () {
-      window.open(window.location.origin + '/cv')
+      window.open('https://drive.google.com/file/d/13gsI5nPsdZPRUCMuJCa0qNi2sKkqgHtD/view?usp=sharing')
     }
   }
 }
@@ -58,8 +52,8 @@ export default {
 
 <style lang="scss" module>
 .root {
-  width: 100%;
-  height: 100%;
+  width: calc(100vw - 80px);
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +61,7 @@ export default {
 
 .line {
   width: 80%;
-  height: 90%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,6 +123,8 @@ export default {
 }
 
 .outside {
+  width: 150px;
+  height: 150px;
   flex-direction: column;
   border-radius: 5px;
   cursor: pointer;
@@ -165,5 +161,48 @@ export default {
   width: 25px;
   height: 25px;
   margin-bottom: 18px;
+}
+
+@media (max-width: 1025px) {
+  .root {
+    min-height: calc(100vh - 75px);
+    width: 100%;
+    display: block;
+  }
+
+  .line {
+    min-height: calc(100vh - 75px);
+    margin: 0 auto;
+    justify-content: unset;
+    padding: 40px 0;
+    box-sizing: border-box;
+  }
+
+  .name {
+
+    .text {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+
+  .cvout {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .outside {
+    width: 153px;
+    height: 130px;
+    margin-top: 20px;
+  }
+
+  .imageCss {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 </style>

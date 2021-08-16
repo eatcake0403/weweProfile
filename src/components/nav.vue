@@ -49,9 +49,8 @@ export default {
   border-radius: 0 10px 10px 0;
   box-shadow: 11px 8px 8px rgba(0, 0, 0, .1);
   display: grid;
-  grid-template-rows: repeat(3, 55px);
+  grid-template-rows: repeat(2, 55px);
   grid-template-columns: 55px;
-  flex-direction: column;
   justify-content: center;
   padding: 55px 0;
   box-sizing: border-box;
@@ -78,5 +77,16 @@ export default {
 .icon {
   width: 30px;
   height: auto;
+}
+
+@media (max-width: 1025px) {
+  .root {
+    grid-template-columns: repeat(2, 55px);
+    grid-template-rows: 55px;
+    grid-auto-flow: column;
+    grid-column-gap: 30px;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+  }
 }
 </style>

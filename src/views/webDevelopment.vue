@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.root">
     <div :class="$style.title">
-      /  - Portfolio -  /
+      /  - Profile -  /
     </div>
     <div :class="$style.layout">
       <div
@@ -73,7 +73,7 @@ export default {
         routeName: 'roche',
         btn: true
       }, {
-        img: require('@/assets/image/sheho/09.png'),
+        img: require('@/assets/image/sheho/08.png'),
         title: '師虎來了形象官網',
         directions: [
           '製作形象官網。'
@@ -81,7 +81,7 @@ export default {
         routeName: 'sheho',
         btn: true
       }, {
-        img: require('@/assets/image/shop/017.png'),
+        img: require('@/assets/image/shop/04.png'),
         title: '電商系統',
         directions: [
           '會員系統、分潤系統、購物車系統。',
@@ -105,6 +105,12 @@ export default {
         directions: ['使用 WebSocket 接收 IP 的字串，使用 WebRTC和串接視訊、音頻達到多人視訊的效果，但目前未優化，只是簡單的串接。'],
         routeName: 'shinjer',
         btn: false
+      }, {
+        img: require('@/assets/image/other/08.png'),
+        title: 'UI/UX / Graphic / Web',
+        directions: ['一些網頁、視覺以及其他網站。（有點亂）'],
+        routeName: 'other',
+        btn: true
       }]
     }
   }
@@ -114,8 +120,7 @@ export default {
 <style lang="scss" module>
 .root {
   width: 100%;
-  min-height: 100%;
-  overflow: auto;
+  height: 100%;
   padding: 80px 0;
   box-sizing: border-box;
 }
@@ -223,14 +228,52 @@ export default {
 }
 
 @media (max-width: 1025px) {
-  .layout {
-    grid-auto-columns: 100%;
+  .root {
+    padding: 30px 0;
   }
-}
 
-@media (max-width: 1025px) {
+  .title {
+    padding: 10px 0;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
   .layout {
-    grid-auto-columns: 100%;
+    grid-auto-columns: 90%;
+    grid-auto-rows: minmax(450px, auto);
+  }
+
+  .outside {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .outimg {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imgStyle {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .out {
+    padding: 30px 0 0 0;
+  }
+
+  .title2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .direction {
+    font-size: 16px;
   }
 }
 </style>

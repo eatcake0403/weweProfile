@@ -1,4 +1,8 @@
 module.exports = {
+  publicPath: '/profile/',
+  devServer: {
+    https: true
+  },
   pages: {
     index: {
       entry: 'src/main.js',

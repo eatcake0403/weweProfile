@@ -18,28 +18,25 @@ export default {
 <style lang="scss" module>
 .root {
   display: grid;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   grid-template-areas: 'nav main'
                         'nav main';
   grid-template-columns: 80px 1fr;
   background: #8888C4;
   position: relative;
-  overflow: hidden;
 }
 
 .background {
   background-image: url(../assets/svg/background.png);
   background-repeat: repeat;
-  background-size: 50%;
   width: 100%;
   height: 100%;
   position: absolute;
   animation-name: backgroundImage;
-  animation-duration: 17s;
+  animation-duration: 200s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  transform: scale(2);
 }
 
 @keyframes backgroundImage {
@@ -54,7 +51,12 @@ export default {
 
 .nav {
   grid-area: nav;
-  z-index: 1;
+  z-index: 2;
+  position: fixed;
+  height: 100vh;
+  width: 80px;
+  top: 0;
+  left: 0;
 }
 
 .main {
@@ -62,6 +64,20 @@ export default {
   grid-area: main;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
+  .nav {
+    grid-area: nav;
+    z-index: 2;
+    position: sticky;
+    width: 100%;
+    height: unset;
+    top: 0;
+    left: 0;
+  }
+
+  .root {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
